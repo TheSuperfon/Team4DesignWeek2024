@@ -4,28 +4,48 @@ using UnityEngine;
 
 public class KnifeScript : MicrogameInputEvents
 {
-    public bool movementstate;
+    //public bool movementstate;
     Vector2 KnifeDirection;
+    float knifespeed = 25f;
+    float KnifeMoveFriction = 6f;
+    Vector3 knifeacceleration;
+    Vector3 NewKnifeLocation;
+    Vector3 KnifeVelocity;
 
-    float speed = 5f;
+
+
+
+    //float speed = 5f;
     
     // Start is called before the first frame update
     void Start()
     {
-        movementstate = true;
-        KnifeDirection = stick.normalized;
+        //movementstate = true;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //HorizontalTransform = Input.GetAxis("Horizontal");
-        //VerticalTransform = Input.GetAxis("Vertical");
-        //transform.Translate(HorizontalTransform * speed * Time.deltaTime, VerticalTransform * speed * Time.deltaTime, 0);
-
-        
+        moveknife();
 
 
 
     }
+
+    void moveknife() 
+    {
+        KnifeDirection = ((Vector2)stick).normalized;
+        knifeacceleration = KnifeDirection * knifespeed;
+        KnifeVelocity += knifeacceleration * Time.deltaTime;
+        KnifeVelocity *= 1 - KnifeMoveFriction  * Time.deltaTime;
+
+        NewKnifeLocation = transform.position + KnifeVelocity * Time.deltaTime;
+
+
+        transform.position = NewKnifeLocation;
+    }
+
+
+
 }
