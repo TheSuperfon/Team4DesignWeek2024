@@ -52,6 +52,9 @@ public class FuseScript : MicrogameInputEvents
         }
         else{
             explosionimage.SetActive(true);
+            Debug.Log("finish");
+            ReportGameCompletedEarly();
+            Debug.Log("finish2");
         }
         
         activecoroutine = true;

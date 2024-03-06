@@ -10,10 +10,13 @@ public class CounterScript : MicrogameInputEvents
     public float timeElapsed;
     public GameObject bomb;
     public Transform SparkLocation;
+    public Transform Ropelocation;
+    public GameObject Rope;
     public GameObject heatmark;
     public LineRenderer Fuse;
     public float Realscore;
     public GameObject Winscore;
+    public GameObject RopeSpawn;
     
 
     protected override void OnGameStart()
@@ -23,6 +26,7 @@ public class CounterScript : MicrogameInputEvents
         timeElapsed = 0;
         Winscore.SetActive(false);
         heatmark.SetActive(false);
+        RopeSpawn.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,12 +41,15 @@ public class CounterScript : MicrogameInputEvents
         //{
         //    //vCounter = false;
         //}
-        if (Realscore >= 16)
+        if (Realscore >= 15)
         {
             Vactive = false;
             bomb.SetActive(false);
             heatmark.SetActive(false);
             Winscore.SetActive(true);
+            //Debug.Log("finish");
+            ReportGameCompletedEarly();
+            //Debug.Log("finish2");
             
         }
 
@@ -61,7 +68,7 @@ public class CounterScript : MicrogameInputEvents
         if (timeElapsed >= 5) 
         {
             
-            Vector2 NewHeatmarkLocation = new Vector2(gameObject.transform.position.x,(gameObject.transform.position.y + 0.55f));
+            Vector2 NewHeatmarkLocation = new Vector2((gameObject.transform.position.x - 0.4f),(gameObject.transform.position.y + 0.55f));
             heatmark.transform.position = NewHeatmarkLocation;
             heatmark.SetActive(true);
             
@@ -69,7 +76,7 @@ public class CounterScript : MicrogameInputEvents
         }
         else{
             heatmark.SetActive(false);
-
+            StartCoroutine(ropeparticles());
         }
         
     }
@@ -94,6 +101,27 @@ public class CounterScript : MicrogameInputEvents
         
     }
 
+    public IEnumerator ropeparticles()
+    {
+        //if (Vactive == false) return;
+        //Debug.Log(timeElapsed);
+        Debug.Log("log");
+        Vector2 NewropeLocation = new Vector2((gameObject.transform.position.x - 0.4f),(gameObject.transform.position.y + 0.55f));
+        //RopeSpawn.transform.position = NewropeLocation;
+        //public GameObject ropeclone;
+        //ropeclone = Instantiate(RopeSpawn, NewropeLocation);
+        RopeSpawn.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        RopeSpawn.SetActive(false);
+        
+        
+        //Debug.Log("new");
+        
+    
+
+        
+    }
+
     public void Vresults()
     {
         if (Vactive == false) return;
@@ -108,6 +136,7 @@ public class CounterScript : MicrogameInputEvents
             {
                 Vector2 NewSparkLocation = new Vector2(gameObject.transform.position.x,(gameObject.transform.position.y) + 0.55f);
                 SparkLocation.transform.position = NewSparkLocation;
+                Ropelocation.transform.position = NewSparkLocation;
                 //Fuse.SetPosition(0, new Vector2(SparkLocation.position.x, SparkLocation.position.y));
                 //yield return new WaitForSeconds(0.1f);
                 timeElapsed = 0;
