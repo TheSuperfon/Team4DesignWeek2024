@@ -16,7 +16,7 @@ MonoBehaviour:
   teamNumber: 0
   gameTitle: Desert Defusal
   gameIcon: {fileID: 0}
-  prompt: 
+  prompt: cut the fuse
   singlePlayerScene: {fileID: 102900000, guid: 60393639262f6f940a98f21a87a5036c, type: 3}
   twoPlayerScene: {fileID: 0}
   controls: []
