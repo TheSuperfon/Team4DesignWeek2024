@@ -11,12 +11,13 @@ public class CounterScript : MicrogameInputEvents
     public GameObject bomb;
     public Transform SparkLocation;
     public Transform Ropelocation;
-    public GameObject Rope;
+    //public GameObject Rope;
     public GameObject heatmark;
     public LineRenderer Fuse;
     public float Realscore;
     public GameObject Winscore;
-    public GameObject RopeSpawn;
+    public GameObject RopeParticleSpawn;
+    public Transform RopeParticleTransform;
     
 
     protected override void OnGameStart()
@@ -26,12 +27,15 @@ public class CounterScript : MicrogameInputEvents
         timeElapsed = 0;
         Winscore.SetActive(false);
         heatmark.SetActive(false);
-        RopeSpawn.SetActive(false);
+        RopeParticleSpawn.SetActive(false);
+        
     }
 
     // Update is called once per frame
     private void Update()
     {
+
+
         //if (button1.IsPressed) 
         //{
         //    //vCounter = true;
@@ -76,7 +80,7 @@ public class CounterScript : MicrogameInputEvents
         }
         else{
             heatmark.SetActive(false);
-            StartCoroutine(ropeparticles());
+            ropeparticles();
         }
         
     }
@@ -101,18 +105,20 @@ public class CounterScript : MicrogameInputEvents
         
     }
 
-    public IEnumerator ropeparticles()
+    public void ropeparticles()
     {
         //if (Vactive == false) return;
         //Debug.Log(timeElapsed);
-        Debug.Log("log");
-        Vector2 NewropeLocation = new Vector2((gameObject.transform.position.x - 0.4f),(gameObject.transform.position.y + 0.55f));
+        Debug.Log("kkkkkk");
+        //Vector2 NewropeLocation = new Vector2((gameObject.transform.position.x - 0.4f),(gameObject.transform.position.y + 0.55f));
         //RopeSpawn.transform.position = NewropeLocation;
         //public GameObject ropeclone;
-        //ropeclone = Instantiate(RopeSpawn, NewropeLocation);
-        RopeSpawn.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        RopeSpawn.SetActive(false);
+        GameObject RopeClone = Instantiate(RopeParticleSpawn, RopeParticleTransform.position, RopeParticleTransform.rotation);
+        RopeClone.SetActive(true);
+        //Debug.Log("LLLLL");
+        //RopeParticleSpawn.SetActive(true);
+        //yield return new WaitForSeconds(1f);
+        //RopeParticleSpawn.SetActive(false);
         
         
         //Debug.Log("new");

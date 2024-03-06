@@ -567,11 +567,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &685714655 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4989564071681042670, guid: b6f573efe0ef802468d33026e1d02d9c, type: 3}
-  m_PrefabInstance: {fileID: 6477816054597550913}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &700033625
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,12 +1903,12 @@ MonoBehaviour:
   bomb: {fileID: 2087385609}
   SparkLocation: {fileID: 2031462337}
   Ropelocation: {fileID: 771045646}
-  Rope: {fileID: 0}
   heatmark: {fileID: 1656676971}
   Fuse: {fileID: 2087385613}
   Realscore: 0
   Winscore: {fileID: 1558853557}
-  RopeSpawn: {fileID: 685714655}
+  RopeParticleSpawn: {fileID: 4989564071681042670, guid: b6f573efe0ef802468d33026e1d02d9c, type: 3}
+  RopeParticleTransform: {fileID: 2017278758}
 --- !u!114 &2017278756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2217,12 +2212,12 @@ MonoBehaviour:
   bomb: {fileID: 2087385609}
   SparkLocation: {fileID: 2031462337}
   Ropelocation: {fileID: 0}
-  Rope: {fileID: 0}
   heatmark: {fileID: 1656676971}
   Fuse: {fileID: 2087385613}
   Realscore: 0
   Winscore: {fileID: 1558853557}
-  RopeSpawn: {fileID: 0}
+  RopeParticleSpawn: {fileID: 0}
+  RopeParticleTransform: {fileID: 0}
 --- !u!61 &2086684276
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2762,11 +2757,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3102987596049981167, guid: b6f573efe0ef802468d33026e1d02d9c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.05
+      value: -0.13
       objectReference: {fileID: 0}
     - target: {fileID: 3102987596049981167, guid: b6f573efe0ef802468d33026e1d02d9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.95
+      value: -1.02
       objectReference: {fileID: 0}
     - target: {fileID: 3102987596049981167, guid: b6f573efe0ef802468d33026e1d02d9c, type: 3}
       propertyPath: m_LocalPosition.z
