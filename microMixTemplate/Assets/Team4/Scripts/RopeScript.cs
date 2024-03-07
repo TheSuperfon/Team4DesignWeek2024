@@ -19,7 +19,7 @@ public class RopeScript : MonoBehaviour
         if (transform.position.y != -0.28f)
         {
 
-            Vector2 newposition = new Vector3(xposition,-2.95f);
+            Vector2 newposition = new Vector3(xposition,-2.45f);
             transform.position = newposition;
 
         }

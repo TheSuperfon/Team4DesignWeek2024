@@ -19,7 +19,7 @@ public class FuseYlocation : MonoBehaviour
         if (transform.position.y != -0.28f)
         {
 
-            Vector2 newposition = new Vector3(xposition,-2.85f);
+            Vector2 newposition = new Vector3(xposition,-2.35f);
             transform.position = newposition;
 
         }
