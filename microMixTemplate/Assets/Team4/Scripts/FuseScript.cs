@@ -10,6 +10,7 @@ public class FuseScript : MicrogameInputEvents
     LineRenderer Fuse;
     public float fusetime;
     public GameObject explosionimage;
+    bool Notagain;
 
 
 
@@ -23,12 +24,13 @@ public class FuseScript : MicrogameInputEvents
         Fuse.SetPosition(1, new Vector2(Endfuse.position.x, Endfuse.position.y));
         activecoroutine = true;
         explosionimage.SetActive(false);
+        Notagain = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (activecoroutine == true)
+        if ((activecoroutine == true) && (Notagain == false))
         {
             StartCoroutine(LitBomb());
 
@@ -52,9 +54,10 @@ public class FuseScript : MicrogameInputEvents
         }
         else{
             explosionimage.SetActive(true);
-            Debug.Log("finish");
+            //Debug.Log("finish");
+            Notagain = true;
             ReportGameCompletedEarly();
-            Debug.Log("finish2");
+            //Debug.Log("finish2");
         }
         
         activecoroutine = true;

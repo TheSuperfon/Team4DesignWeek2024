@@ -26,6 +26,7 @@ public class ExplosionAudio : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         musicPlay.SetActive(true);
+        gameObject.SetActive(false);
     }
         
     
