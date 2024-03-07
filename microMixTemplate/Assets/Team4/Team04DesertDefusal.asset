@@ -41,5 +41,10 @@ MonoBehaviour:
   - 'Where''s the kaboom? There''s supposed to be an earth shattering kaboom! '
   - Butter luck next knife.
   bannerImage: {fileID: 0}
-  developerCredits: []
+  developerCredits:
+  - Stefan Auburn
+  - Justin Bates
+  - Aunonna Kazi
+  - Grace Yang
+  - Olivia Workman
   licensedWorksCredits: []

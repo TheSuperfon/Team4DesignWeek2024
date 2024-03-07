@@ -61,7 +61,7 @@ public class CounterScript : MicrogameInputEvents
             {
                 endgame = false;
                 ReportGameCompletedEarly();
-                Debug.Log("done");
+                //Debug.Log("done");
                 
             }
             
@@ -144,7 +144,7 @@ public class CounterScript : MicrogameInputEvents
     {
         if (Vactive == false) return;
 
-        Debug.Log(timeElapsed);
+        //Debug.Log(timeElapsed);
         if (timeElapsed >= 10)
         {
             
