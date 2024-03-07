@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Team04DesertDefusal
   m_EditorClassIdentifier: 
   includeInRandomizer: 1
-  teamNumber: 0
+  teamNumber: 4
   gameTitle: Desert Defusal
   gameIcon: {fileID: 21300000, guid: 632e0988c671dabb1b8512dba1784992, type: 3}
-  prompt: cut the fuse
+  announcerText: Cut
+  announcerAudioFile: Cut-RX10MDc_86-01
+  _announcerAudio: {fileID: 8300000, guid: 3573a55236a09744d8f379995095c5c5, type: 3}
   singlePlayerScene: {fileID: 102900000, guid: 60393639262f6f940a98f21a87a5036c, type: 3}
   twoPlayerScene: {fileID: 0}
   controls:
