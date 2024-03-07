@@ -30,7 +30,7 @@ TagManager:
   - Detect Bonus
   - Bonus Self-Interact
   - Bonus No Self-Interact
-  - 
+  - Trophy2
   - 
   - 
   - 
@@ -51,4 +51,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Trophy
+    uniqueID: 774947405
     locked: 0
