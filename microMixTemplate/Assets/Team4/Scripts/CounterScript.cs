@@ -18,6 +18,7 @@ public class CounterScript : MicrogameInputEvents
     public GameObject Winscore;
     public GameObject RopeParticleSpawn;
     public Transform RopeParticleTransform;
+    public GameObject musicPlay;
     
 
     protected override void OnGameStart()
@@ -28,6 +29,7 @@ public class CounterScript : MicrogameInputEvents
         Winscore.SetActive(false);
         heatmark.SetActive(false);
         RopeParticleSpawn.SetActive(false);
+        musicPlay.SetActive(false);
         
     }
 
@@ -109,7 +111,7 @@ public class CounterScript : MicrogameInputEvents
     {
         //if (Vactive == false) return;
         //Debug.Log(timeElapsed);
-        Debug.Log("kkkkkk");
+        //Debug.Log("u");
         //Vector2 NewropeLocation = new Vector2((gameObject.transform.position.x - 0.4f),(gameObject.transform.position.y + 0.55f));
         //RopeSpawn.transform.position = NewropeLocation;
         //public GameObject ropeclone;
