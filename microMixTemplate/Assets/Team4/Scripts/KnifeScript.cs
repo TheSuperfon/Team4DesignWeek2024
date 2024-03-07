@@ -11,6 +11,7 @@ public class KnifeScript : MicrogameInputEvents
     Vector3 knifeacceleration;
     Vector3 NewKnifeLocation;
     Vector3 KnifeVelocity;
+    public bool KnifeMoveActive;
 
 
 
@@ -21,14 +22,19 @@ public class KnifeScript : MicrogameInputEvents
     void Start()
     {
         //movementstate = true;
-        
+        KnifeMoveActive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         // if joystick input is detected, but no button press:
-        moveknife();
+        if (KnifeMoveActive == true)
+        {
+            moveknife();
+
+        }
+        
 
         // if button press is ever detected:
         // ActivateCutMode;

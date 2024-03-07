@@ -20,6 +20,9 @@ public class CounterScript : MicrogameInputEvents
     public Transform RopeParticleTransform;
     public GameObject musicPlay;
     bool endgame;
+    public KnifeScript TheKnifeScript;
+    public GameObject Music;
+
     
 
     protected override void OnGameStart()
@@ -32,6 +35,7 @@ public class CounterScript : MicrogameInputEvents
         RopeParticleSpawn.SetActive(false);
         musicPlay.SetActive(false);
         endgame = false;
+        
         
     }
 
@@ -55,6 +59,7 @@ public class CounterScript : MicrogameInputEvents
             bomb.SetActive(false);
             heatmark.SetActive(false);
             Winscore.SetActive(true);
+            Music.SetActive(false);
             //Debug.Log("finish");
             
             if (endgame == true)
@@ -67,6 +72,22 @@ public class CounterScript : MicrogameInputEvents
             
             //Debug.Log("finish2");
             
+        }
+
+        if (button1.IsPressed()) {
+            TheKnifeScript.KnifeMoveActive = false;
+        // Similar to Input.GetButton("Button 1") in the old system.
+        //Debug.Log("held");
+        //button1Held = true;
+
+        //} else {
+
+        //button1Held = false;
+
+        }
+        else{
+            TheKnifeScript.KnifeMoveActive = true;
+
         }
 
         

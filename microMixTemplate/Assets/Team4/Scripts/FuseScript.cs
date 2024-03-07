@@ -11,13 +11,25 @@ public class FuseScript : MicrogameInputEvents
     public float fusetime;
     public GameObject explosionimage;
     bool Notagain;
-
+    public GameObject RoadRunnerAsh;
+    public GameObject Foxash;
+    public GameObject jerboaAsh;
+    public GameObject RoadRunner;
+    public GameObject Fox;
+    public GameObject jerboa;
+    public GameObject Music;
 
 
 
     // Start is called before the first frame update
     protected override void OnGameStart()
     {
+        RoadRunnerAsh.SetActive(false);
+        Foxash.SetActive(false);
+        jerboaAsh.SetActive(false);
+        RoadRunner.SetActive(true);
+        Fox.SetActive(true);
+        jerboa.SetActive(true);
         Fuse = GetComponent<LineRenderer>();
         Fuse.positionCount = 2;
         Fuse.SetPosition(0, new Vector2(SparkLocation.position.x, SparkLocation.position.y));
@@ -25,6 +37,7 @@ public class FuseScript : MicrogameInputEvents
         activecoroutine = true;
         explosionimage.SetActive(false);
         Notagain = false;
+        Music.SetActive(true);
     }
 
     // Update is called once per frame
@@ -54,6 +67,13 @@ public class FuseScript : MicrogameInputEvents
         }
         else{
             explosionimage.SetActive(true);
+            RoadRunnerAsh.SetActive(true);
+            Foxash.SetActive(true);
+            jerboaAsh.SetActive(true);
+            RoadRunner.SetActive(false);
+            Fox.SetActive(false);
+            jerboa.SetActive(false);
+            Music.SetActive(false);
             //Debug.Log("finish");
             Notagain = true;
             ReportGameCompletedEarly();
