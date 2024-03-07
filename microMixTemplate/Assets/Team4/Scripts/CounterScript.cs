@@ -19,6 +19,7 @@ public class CounterScript : MicrogameInputEvents
     public GameObject RopeParticleSpawn;
     public Transform RopeParticleTransform;
     public GameObject musicPlay;
+    bool endgame;
     
 
     protected override void OnGameStart()
@@ -30,6 +31,7 @@ public class CounterScript : MicrogameInputEvents
         heatmark.SetActive(false);
         RopeParticleSpawn.SetActive(false);
         musicPlay.SetActive(false);
+        endgame = false;
         
     }
 
@@ -54,7 +56,15 @@ public class CounterScript : MicrogameInputEvents
             heatmark.SetActive(false);
             Winscore.SetActive(true);
             //Debug.Log("finish");
-            ReportGameCompletedEarly();
+            
+            if (endgame == true)
+            {
+                endgame = false;
+                ReportGameCompletedEarly();
+                Debug.Log("done");
+                
+            }
+            
             //Debug.Log("finish2");
             
         }
@@ -68,7 +78,7 @@ public class CounterScript : MicrogameInputEvents
         //Debug.Log("V Pressed!");
         timeElapsed += 1;
         StartCoroutine(Vtimer());
-        
+        endgame = true;
 
 
         if (timeElapsed >= 5) 

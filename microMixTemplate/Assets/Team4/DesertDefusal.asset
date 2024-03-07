@@ -19,11 +19,24 @@ MonoBehaviour:
   prompt: cut the fuse
   singlePlayerScene: {fileID: 102900000, guid: 60393639262f6f940a98f21a87a5036c, type: 3}
   twoPlayerScene: {fileID: 0}
-  controls: []
+  controls:
+  - label: Move
+    primary: 124
+    joiner: 0
+    secondary: 0
+  - label: Cut
+    primary: 28
+    joiner: 0
+    secondary: 1
   rightPlayerAltControls: []
   singlePlayerScenePath: Assets/Team4/Scenes/GameVersion1.unity
   twoPlayerScenePath: 
-  postgameMessages: []
+  postgameMessages:
+  - 'Fun Fact: Over 60% of ACME brand bombs spontaneously light in the presence of
+    coyotes '
+  - 'Meep Meep! '
+  - 'Not great in terms of survival instincts, are they? '
+  - 'Where''s the kaboom? There''s supposed to be an earth shattering kaboom! '
   bannerImage: {fileID: 0}
   developerCredits: []
   licensedWorksCredits: []
