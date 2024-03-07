@@ -7,6 +7,7 @@ public class AnimalLerpScript : MonoBehaviour
     public Transform targetPosition;
     public float initialWaitTime = 4f; // Time to wait before starting lerping
     public float lerpTime = 2f; // Time taken to reach the target position
+    public AnimalScoreCounter AnimalManager;
 
     private Vector3 startPosition;
 
@@ -31,5 +32,6 @@ public class AnimalLerpScript : MonoBehaviour
         }
 
         transform.position = targetPosition.position; // Ensure object reaches exactly at target position
+        AnimalManager.AnimalCounter += 1;
     }
 }
