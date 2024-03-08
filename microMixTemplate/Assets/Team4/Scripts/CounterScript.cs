@@ -31,10 +31,6 @@ public class CounterScript : MicrogameInputEvents
     public GameObject Brokenrope2;
     public GameObject Brokenrope3;
     public GameObject Brokenrope4;
-    public Transform Brokenrope1y;
-    public Transform Brokenrope2y;
-    public Transform Brokenrope3y;
-    public Transform Brokenrope4y;
     
 
     protected override void OnGameStart()
@@ -61,16 +57,6 @@ public class CounterScript : MicrogameInputEvents
     private void Update()
     {
 
-
-        //if (button1.IsPressed) 
-        //{
-        //    //vCounter = true;
-        //    Debug.Log("V Pressed!");
-        //}
-        //else
-        //{
-        //    //vCounter = false;
-        //}
         if (Realscore == 0)
         {
             Brokenrope1.SetActive(false);
@@ -112,7 +98,7 @@ public class CounterScript : MicrogameInputEvents
             Brokenrope4.transform.position = BrokenRope4Location;
             Vactive = false;
             //bomb.SetActive(false);
-            sparkStay.activecoroutine = false;
+            sparkStay.enabled = false;
             heatmark.SetActive(false);
             Winscore.SetActive(true);
             Music.SetActive(false);
@@ -221,8 +207,8 @@ public class CounterScript : MicrogameInputEvents
         }
         else if((timeElapsed >= 1) && (timeElapsed > 5)) {
             heatmark.SetActive(false);
-            Debug.Log("hi");
-            ropeparticles();
+            //Debug.Log("hi");
+           //ropeparticles();
         }
         
     }
@@ -273,7 +259,7 @@ public class CounterScript : MicrogameInputEvents
     }
 
 
-
+    /*
     public void ropeparticles()
     {
         //if (Vactive == false) return;
@@ -295,7 +281,7 @@ public class CounterScript : MicrogameInputEvents
     
 
         
-    }
+    }*/
 
     public void Vresults()
     {

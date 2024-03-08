@@ -4582,10 +4582,6 @@ MonoBehaviour:
   Brokenrope2: {fileID: 1893262379}
   Brokenrope3: {fileID: 1179701319}
   Brokenrope4: {fileID: 1319022531}
-  Brokenrope1y: {fileID: 0}
-  Brokenrope2y: {fileID: 0}
-  Brokenrope3y: {fileID: 0}
-  Brokenrope4y: {fileID: 0}
 --- !u!114 &2017278756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4602,6 +4598,7 @@ MonoBehaviour:
   knifespeed: 25
   KnifeVelocity: {x: 0, y: 0, z: 0}
   KnifeMoveActive: 0
+  KnifeLocation: {fileID: 2017278758}
 --- !u!212 &2017278757
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4876,6 +4873,7 @@ MonoBehaviour:
   knifespeed: 25
   KnifeVelocity: {x: 0, y: 0, z: 0}
   KnifeMoveActive: 0
+  KnifeLocation: {fileID: 0}
 --- !u!114 &2086684275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4910,10 +4908,6 @@ MonoBehaviour:
   Brokenrope2: {fileID: 0}
   Brokenrope3: {fileID: 0}
   Brokenrope4: {fileID: 0}
-  Brokenrope1y: {fileID: 0}
-  Brokenrope2y: {fileID: 0}
-  Brokenrope3y: {fileID: 0}
-  Brokenrope4y: {fileID: 0}
 --- !u!61 &2086684276
 BoxCollider2D:
   m_ObjectHideFlags: 0

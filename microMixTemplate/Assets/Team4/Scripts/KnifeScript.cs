@@ -12,6 +12,7 @@ public class KnifeScript : MicrogameInputEvents
     Vector3 NewKnifeLocation;
     public Vector3 KnifeVelocity;
     public bool KnifeMoveActive;
+    public Transform KnifeLocation;
 
 
 
@@ -40,7 +41,20 @@ public class KnifeScript : MicrogameInputEvents
         // if button press is ever detected:
         // ActivateCutMode;
 
+        if (transform.position.y <= -6f)
+        {
 
+            Vector2 newposition = new Vector3(0,-2.35f);
+            transform.position = newposition;
+
+        }
+        if (transform.position.y >= 6f)
+        {
+
+            Vector2 newposition = new Vector3(0,-2.35f);
+            transform.position = newposition;
+
+        }
 
     }
 
