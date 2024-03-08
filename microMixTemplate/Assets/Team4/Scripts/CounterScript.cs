@@ -95,7 +95,7 @@ public class CounterScript : MicrogameInputEvents
 
         }
 
-        if (Realscore > 17)
+        if (Realscore > 25)
         {
             Brokenrope4.SetActive(true);
             Vector2 BrokenRope4Location = new Vector2((gameObject.transform.position.x - 0.4f),(gameObject.transform.position.y + 0.55f));

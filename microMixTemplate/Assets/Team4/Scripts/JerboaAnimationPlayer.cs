@@ -21,7 +21,7 @@ public class JerboaAnimationPlayer : MonoBehaviour
 
     public IEnumerator JerboaIdle()
     {
-        yield return new WaitForSeconds(18f); 
+        yield return new WaitForSeconds(22f); 
         JerboaAnim.Play("Jerboa2");
 
         
