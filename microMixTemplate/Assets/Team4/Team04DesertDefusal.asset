@@ -37,12 +37,22 @@ MonoBehaviour:
   - (Copyright distinct Roadrunner noise)
   - 'Not great in terms of survival instincts, are they? '
   - Butter luck next knife.
-  bannerImage: {fileID: 21300000, guid: c159d4df7ac78cf43b8a036450677da2, type: 3}
+  bannerImage: {fileID: 21300000, guid: 393f681609aaa9e4f973556f7fbf4e68, type: 3}
   developerCredits:
   - Stefan Auburn
   - Justin Bates
   - Aunonna Kazi
   - Grace Yang
   - Olivia Workman
-  - Claudia Rando (audio)
-  licensedWorksCredits: []
+  - Claudia Rando
+  licensedWorksCredits:
+  - titleOfWork: 
+    creator: 
+    source: Soundly
+    url: 
+    licence: 
+  - titleOfWork: 
+    creator: 
+    source: Soundly
+    url: 
+    licence: 

@@ -31,6 +31,8 @@ public class CounterScript : MicrogameInputEvents
     public GameObject Brokenrope2;
     public GameObject Brokenrope3;
     public GameObject Brokenrope4;
+    public GameObject Glow;
+    public GameObject SawSound;
     
 
     protected override void OnGameStart()
@@ -51,6 +53,8 @@ public class CounterScript : MicrogameInputEvents
         Brokenrope2.SetActive(false);
         Brokenrope3.SetActive(false);
         Brokenrope4.SetActive(false);
+        Glow.SetActive(false);
+        SawSound.SetActive(false);
     }
 
     // Update is called once per frame
@@ -118,6 +122,7 @@ public class CounterScript : MicrogameInputEvents
         }
 
         if (button1.IsPressed()) {
+            SawSound.SetActive(true);
             if (Vactive == false) return;
             KnifeMoveActive2 = false;
 
@@ -192,7 +197,7 @@ public class CounterScript : MicrogameInputEvents
             TheKnifeScript.knifespeed = 25f;
             timeElapsed = 0;
             Realscore = 0;
-
+            SawSound.SetActive(false);
             KnifeMoveActive2 = true;
         }
 
