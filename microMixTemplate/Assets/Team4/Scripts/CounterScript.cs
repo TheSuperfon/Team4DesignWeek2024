@@ -22,7 +22,19 @@ public class CounterScript : MicrogameInputEvents
     bool endgame;
     public KnifeScript TheKnifeScript;
     public GameObject Music;
-
+    public bool KnifeMoveActive2;
+    //Vector2 up = (0,1);
+    //bool Updirection;
+    bool upscore;
+    public FuseScript sparkStay;
+    public GameObject Brokenrope1;
+    public GameObject Brokenrope2;
+    public GameObject Brokenrope3;
+    public GameObject Brokenrope4;
+    public Transform Brokenrope1y;
+    public Transform Brokenrope2y;
+    public Transform Brokenrope3y;
+    public Transform Brokenrope4y;
     
 
     protected override void OnGameStart()
@@ -35,8 +47,14 @@ public class CounterScript : MicrogameInputEvents
         RopeParticleSpawn.SetActive(false);
         musicPlay.SetActive(false);
         endgame = false;
-        
-        
+        KnifeMoveActive2 = true;
+        //Updirection = true;
+        upscore = true;
+        Realscore = 0;
+        Brokenrope1.SetActive(false);
+        Brokenrope2.SetActive(false);
+        Brokenrope3.SetActive(false);
+        Brokenrope4.SetActive(false);
     }
 
     // Update is called once per frame
@@ -53,10 +71,48 @@ public class CounterScript : MicrogameInputEvents
         //{
         //    //vCounter = false;
         //}
-        if (Realscore >= 15)
+        if (Realscore == 0)
         {
+            Brokenrope1.SetActive(false);
+            Brokenrope2.SetActive(false);
+            Brokenrope3.SetActive(false);
+            //Brokenrope4.SetActive(false);
+
+
+        }
+
+
+        if ((Realscore >= 4) && (Realscore < 9))
+        {
+            Brokenrope1.SetActive(true);
+            Vector2 BrokenRope1Location = new Vector2((gameObject.transform.position.x - 0.4f),(gameObject.transform.position.y + 0.55f));
+            Brokenrope1.transform.position = BrokenRope1Location;
+
+        }
+
+        if ((Realscore >= 9) && (Realscore < 15))
+        {
+            Brokenrope2.SetActive(true);
+            Vector2 BrokenRope2Location = new Vector2((gameObject.transform.position.x - 0.4f),(gameObject.transform.position.y + 0.55f));
+            Brokenrope2.transform.position = BrokenRope2Location;
+
+        }
+        if ((Realscore >= 15) && (Realscore < 18))
+        {
+            Brokenrope3.SetActive(true);
+            Vector2 BrokenRope3Location = new Vector2((gameObject.transform.position.x - 0.4f),(gameObject.transform.position.y + 0.55f));
+            Brokenrope3.transform.position = BrokenRope3Location;
+
+        }
+
+        if (Realscore > 17)
+        {
+            Brokenrope4.SetActive(true);
+            Vector2 BrokenRope4Location = new Vector2((gameObject.transform.position.x - 0.4f),(gameObject.transform.position.y + 0.55f));
+            Brokenrope4.transform.position = BrokenRope4Location;
             Vactive = false;
-            bomb.SetActive(false);
+            //bomb.SetActive(false);
+            sparkStay.activecoroutine = false;
             heatmark.SetActive(false);
             Winscore.SetActive(true);
             Music.SetActive(false);
@@ -65,8 +121,9 @@ public class CounterScript : MicrogameInputEvents
             if (endgame == true)
             {
                 endgame = false;
+
                 ReportGameCompletedEarly();
-                //Debug.Log("done");
+                //Debug.Log(Realscore);
                 
             }
             
@@ -75,24 +132,101 @@ public class CounterScript : MicrogameInputEvents
         }
 
         if (button1.IsPressed()) {
-            TheKnifeScript.KnifeMoveActive = false;
-        // Similar to Input.GetButton("Button 1") in the old system.
-        //Debug.Log("held");
-        //button1Held = true;
+            if (Vactive == false) return;
+            KnifeMoveActive2 = false;
 
-        //} else {
+            if (((Vector2)stick) == Vector2.up){
+                if (RopeParticleTransform.position.y >= -3.0f)
+                    {
+                        TheKnifeScript.KnifeMoveActive = false;
+                        if (upscore == true)
+                        {
+                            TheKnifeScript.KnifeVelocity = Vector3.zero;
+                            timeElapsed += 1;
+                            upscore = false;
+                        }
+                        
+                        StartCoroutine(Vtimer());
+                        endgame = true;
 
-        //button1Held = false;
+                    } 
+                    else {
+                        TheKnifeScript.knifespeed = 300f;
+                        TheKnifeScript.KnifeMoveActive = true;
+                    }
+
+
+            }
+            else if (((Vector2)stick) == Vector2.down){
+
+                /*if (Updirection == false){
+                    if (RopeParticleTransform.position.y >= 0.2f)
+                    {
+
+
+
+                    } 
+
+
+
+                }*/
+                if (RopeParticleTransform.position.y <= -3.4f)
+                    {
+                        TheKnifeScript.KnifeMoveActive = false;
+                        if (upscore == false)
+                        {
+                            TheKnifeScript.KnifeVelocity = Vector3.zero;
+                            timeElapsed += 1;
+                            
+                            upscore = true;
+                        }
+                        StartCoroutine(Vtimer());
+                        endgame = true;
+
+                    } 
+                    else {
+                        TheKnifeScript.knifespeed = 300f;
+                        TheKnifeScript.KnifeMoveActive = true;
+                    }
+
+
+            }
+            else 
+            {
+                TheKnifeScript.KnifeMoveActive = false;
+
+            }
+
+
+
 
         }
         else{
             TheKnifeScript.KnifeMoveActive = true;
+            TheKnifeScript.knifespeed = 25f;
+            timeElapsed = 0;
+            Realscore = 0;
 
+            KnifeMoveActive2 = true;
         }
 
+        if (timeElapsed >= 5) 
+        {
+            
+            Vector2 NewHeatmarkLocation = new Vector2((gameObject.transform.position.x - 0.4f),(gameObject.transform.position.y + 0.55f));
+            heatmark.transform.position = NewHeatmarkLocation;
+            heatmark.SetActive(true);
+            
+            
+        }
+        else if((timeElapsed >= 1) && (timeElapsed > 5)) {
+            heatmark.SetActive(false);
+            Debug.Log("hi");
+            ropeparticles();
+        }
         
     }
-
+    /*
     protected override void OnButton1Pressed(InputAction.CallbackContext context) 
     {
         if (Vactive == false) return;
@@ -116,7 +250,7 @@ public class CounterScript : MicrogameInputEvents
             ropeparticles();
         }
         
-    }
+    }*/
 
 
     public IEnumerator Vtimer()
@@ -137,6 +271,8 @@ public class CounterScript : MicrogameInputEvents
 
         
     }
+
+
 
     public void ropeparticles()
     {
@@ -166,7 +302,7 @@ public class CounterScript : MicrogameInputEvents
         if (Vactive == false) return;
 
         //Debug.Log(timeElapsed);
-        if (timeElapsed >= 10)
+        if (timeElapsed >= 12)
         {
             
             //SparkLocation.Translate(transform.position.x, 0,0);
@@ -184,6 +320,7 @@ public class CounterScript : MicrogameInputEvents
             
         }
         else {
+            heatmark.SetActive(false);
             Realscore += timeElapsed;
             timeElapsed = 0;
             

@@ -34,13 +34,10 @@ MonoBehaviour:
   singlePlayerScenePath: Assets/Team4/Scenes/GameVersion1.unity
   twoPlayerScenePath: 
   postgameMessages:
-  - 'Fun Fact: Over 60% of ACME brand bombs spontaneously light in the presence of
-    coyotes '
-  - 'Meep Meep! '
+  - (Copyright distinct Roadrunner noise)
   - 'Not great in terms of survival instincts, are they? '
-  - 'Where''s the kaboom? There''s supposed to be an earth shattering kaboom! '
   - Butter luck next knife.
-  bannerImage: {fileID: 0}
+  bannerImage: {fileID: 21300000, guid: c159d4df7ac78cf43b8a036450677da2, type: 3}
   developerCredits:
   - Stefan Auburn
   - Justin Bates

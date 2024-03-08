@@ -6,7 +6,7 @@ public class FuseScript : MicrogameInputEvents
 {
     public Transform SparkLocation;
     public Transform Endfuse;
-    bool activecoroutine;
+    public bool activecoroutine;
     LineRenderer Fuse;
     public float fusetime;
     public GameObject explosionimage;
@@ -18,6 +18,11 @@ public class FuseScript : MicrogameInputEvents
     public GameObject Fox;
     public GameObject jerboa;
     public GameObject Music;
+    public SpriteRenderer RealSpark;
+    public SpriteRenderer otherspark;
+    public SpriteRenderer bombsprite;
+    public SpriteRenderer bluebombsprite;
+    public SpriteRenderer endrope;
 
 
 
@@ -38,6 +43,11 @@ public class FuseScript : MicrogameInputEvents
         explosionimage.SetActive(false);
         Notagain = false;
         Music.SetActive(true);
+        RealSpark.enabled = true;
+        otherspark.enabled = true;
+        bombsprite.enabled = true;
+        bluebombsprite.enabled = true;
+        endrope.enabled = true;
     }
 
     // Update is called once per frame
@@ -74,6 +84,11 @@ public class FuseScript : MicrogameInputEvents
             Fox.SetActive(false);
             jerboa.SetActive(false);
             Music.SetActive(false);
+            RealSpark.enabled = false;
+            otherspark.enabled = false;
+            bombsprite.enabled = false;
+            bluebombsprite.enabled = false;
+            endrope.enabled = false;
             //Debug.Log("finish");
             Notagain = true;
             ReportGameCompletedEarly();
@@ -85,10 +100,7 @@ public class FuseScript : MicrogameInputEvents
     }
 
 
-    void Newspark()
-    {
-        
-    }
+    
 
 
 }

@@ -6,11 +6,11 @@ public class KnifeScript : MicrogameInputEvents
 {
     //public bool movementstate;
     Vector2 KnifeDirection;
-    float knifespeed = 25f;
+    public float knifespeed;
     float KnifeMoveFriction = 6f;
     Vector3 knifeacceleration;
     Vector3 NewKnifeLocation;
-    Vector3 KnifeVelocity;
+    public Vector3 KnifeVelocity;
     public bool KnifeMoveActive;
 
 
@@ -23,6 +23,7 @@ public class KnifeScript : MicrogameInputEvents
     {
         //movementstate = true;
         KnifeMoveActive = true;
+        knifespeed = 25f;
     }
 
     // Update is called once per frame
