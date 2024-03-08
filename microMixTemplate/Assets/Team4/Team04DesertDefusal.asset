@@ -29,7 +29,7 @@ MonoBehaviour:
   - label: Cut
     primary: 28
     joiner: 0
-    secondary: 1
+    secondary: 17
   rightPlayerAltControls: []
   singlePlayerScenePath: Assets/Team4/Scenes/GameVersion1.unity
   twoPlayerScenePath: 

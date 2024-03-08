@@ -24,7 +24,7 @@ namespace team04
 
     public IEnumerator JerboaIdle()
     {
-        yield return new WaitForSeconds(22f); 
+        yield return new WaitForSeconds(20f); 
         JerboaAnim.Play("Jerboa2");
 
         

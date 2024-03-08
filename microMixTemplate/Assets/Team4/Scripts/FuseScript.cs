@@ -16,9 +16,11 @@ namespace team04
     public GameObject RoadRunnerAsh;
     public GameObject Foxash;
     public GameObject jerboaAsh;
+    public GameObject bunnyAsh;
     public GameObject RoadRunner;
     public GameObject Fox;
     public GameObject jerboa;
+    public GameObject bunny;
     public GameObject Music;
     public SpriteRenderer RealSpark;
     public SpriteRenderer otherspark;
@@ -34,8 +36,10 @@ namespace team04
         RoadRunnerAsh.SetActive(false);
         Foxash.SetActive(false);
         jerboaAsh.SetActive(false);
+        bunnyAsh.SetActive(false);
         RoadRunner.SetActive(true);
         Fox.SetActive(true);
+        bunny.SetActive(true);
         jerboa.SetActive(true);
         Fuse = GetComponent<LineRenderer>();
         Fuse.positionCount = 2;
@@ -82,9 +86,11 @@ namespace team04
             RoadRunnerAsh.SetActive(true);
             Foxash.SetActive(true);
             jerboaAsh.SetActive(true);
+            bunnyAsh.SetActive(true);
             RoadRunner.SetActive(false);
             Fox.SetActive(false);
             jerboa.SetActive(false);
+            bunny.SetActive(false);
             Music.SetActive(false);
             RealSpark.enabled = false;
             otherspark.enabled = false;
