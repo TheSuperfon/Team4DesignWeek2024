@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnifeScript : MicrogameInputEvents
+namespace team04
+{
+	public class KnifeScript : MicrogameInputEvents
 {
     //public bool movementstate;
     Vector2 KnifeDirection;
@@ -88,3 +90,7 @@ public class KnifeScript : MicrogameInputEvents
     }
 
 }
+
+
+}
+

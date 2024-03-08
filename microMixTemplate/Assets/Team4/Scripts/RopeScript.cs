@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RopeScript : MonoBehaviour
+
+namespace team04
+{
+	public class RopeScript : MonoBehaviour
 {
     public float xposition;
     public Transform fuse;
@@ -25,3 +28,7 @@ public class RopeScript : MonoBehaviour
         }
     }
 }
+
+
+}
+

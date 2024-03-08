@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class AnimalScoreCounter : MicrogameInputEvents
+namespace team04
+{
+	public class AnimalScoreCounter : MicrogameInputEvents
 {
     public TextMeshProUGUI AnimalCounterText;
     public float AnimalCounter;
@@ -25,3 +27,7 @@ public class AnimalScoreCounter : MicrogameInputEvents
         //Debug.Log("Fix");
     }
 }
+
+}
+
+

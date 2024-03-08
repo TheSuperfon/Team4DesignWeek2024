@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FuseScript : MicrogameInputEvents
+namespace team04
+{
+	public class FuseScript : MicrogameInputEvents
 {
     public Transform SparkLocation;
     public Transform Endfuse;
@@ -101,6 +103,10 @@ public class FuseScript : MicrogameInputEvents
 
 
     
+
+
+}
+
 
 
 }

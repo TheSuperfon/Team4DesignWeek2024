@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Brokerope1Y : MonoBehaviour
+namespace team04
+{
+	public class Brokerope1Y : MonoBehaviour
 {
     public float xposition;
     public Transform fuse;
@@ -25,3 +27,6 @@ public class Brokerope1Y : MonoBehaviour
         }
     }
 }
+
+}
+

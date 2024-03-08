@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FuseCollider : MicrogameInputEvents
+namespace team04
+{
+	public class FuseCollider : MicrogameInputEvents
 {
     public Transform SparkLocation;
     bool activecoroutine;
@@ -40,3 +42,7 @@ public class FuseCollider : MicrogameInputEvents
     }
 
 }
+
+
+}
+

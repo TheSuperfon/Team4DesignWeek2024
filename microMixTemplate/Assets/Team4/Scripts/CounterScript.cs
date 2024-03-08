@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CounterScript : MicrogameInputEvents
+
+namespace team04
+{
+	public class CounterScript : MicrogameInputEvents
 {
     public bool Vactive;
     public bool vCounter;
@@ -338,3 +341,7 @@ public class CounterScript : MicrogameInputEvents
         
     }
 }
+
+
+}
+

@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JerboaAnimationPlayer : MonoBehaviour
+
+namespace team04
+{
+	public class JerboaAnimationPlayer : MonoBehaviour
 {
     public Animator JerboaAnim;
     // Start is called before the first frame update
@@ -27,3 +30,6 @@ public class JerboaAnimationPlayer : MonoBehaviour
         
     }
 }
+
+}
+

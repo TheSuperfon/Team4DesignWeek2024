@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplosionAudio : MonoBehaviour
+namespace team04
+{
+	public class ExplosionAudio : MonoBehaviour
 {
     //AudioSource AudioPlay;
     //public AudioSource AudioPlaymusic;
@@ -34,3 +36,7 @@ public class ExplosionAudio : MonoBehaviour
         
     
 }
+
+
+}
+

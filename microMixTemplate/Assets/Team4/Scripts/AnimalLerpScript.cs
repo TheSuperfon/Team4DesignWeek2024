@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimalLerpScript : MonoBehaviour
+namespace team04
+{
+	public class AnimalLerpScript : MonoBehaviour
 {
     public Transform targetPosition;
     public float initialWaitTime = 4f; // Time to wait before starting lerping
@@ -35,3 +37,6 @@ public class AnimalLerpScript : MonoBehaviour
         AnimalManager.AnimalCounter += 1;
     }
 }
+}
+
+

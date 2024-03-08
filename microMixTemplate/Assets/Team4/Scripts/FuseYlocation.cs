@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FuseYlocation : MonoBehaviour
+namespace team04
+{
+	public class FuseYlocation : MonoBehaviour
 {
     public float xposition;
     public Transform fuse;
@@ -25,3 +27,8 @@ public class FuseYlocation : MonoBehaviour
         }
     }
 }
+
+
+
+}
+

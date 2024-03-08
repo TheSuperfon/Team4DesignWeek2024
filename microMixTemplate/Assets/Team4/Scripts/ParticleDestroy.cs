@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticleDestroy : MonoBehaviour
+
+namespace team04
+{
+	public class ParticleDestroy : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -40,3 +43,6 @@ public class ParticleDestroy : MonoBehaviour
         
     }
 }
+
+}
+
